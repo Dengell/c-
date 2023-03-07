@@ -2,7 +2,7 @@
 // 3-> Среда
 // 5-> Пятница
 
-Console.Write("Введите целое число:  ");
+Console.Write("Введите целое положительное число:  ");
 
 int a = Convert.ToInt32(Console.ReadLine());
 
@@ -35,6 +35,10 @@ if(a == 7)
     Console.WriteLine($"По номеру {a} - Воскресенье");
 }
 if(a > 7)
+{
+    Console.WriteLine($"По номеру {a} - Нет дня недели!!!");
+}
+if(a == 0)
 {
     Console.WriteLine($"По номеру {a} - Нет дня недели!!!");
 }
