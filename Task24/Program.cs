@@ -21,4 +21,4 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 int sumNumbers = SumNumbers(number);
 
-Console.WriteLine(sumNumbers);
+Console.WriteLine($"Сумма чисел от 1 до {number} = {sumNumbers}");
