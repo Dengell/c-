@@ -2,7 +2,7 @@
 
 // [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
-double[] CreateArrayRndDouble(int size, int min, int max, int round)
+double[] CreateArrayRndDouble(int size, int min, int max, int round = 1)
 {
     double[] arr = new double[size];
     Random rnd = new Random();
