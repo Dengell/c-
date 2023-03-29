@@ -41,7 +41,7 @@ void PrintMatrix (double[,] matrix)
 Console.WriteLine("Введите количество строк для массива:");
 int m = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите количество строк для массива:");
+Console.WriteLine("Введите количество столбцов для массива:");
 int n = Convert.ToInt32(Console.ReadLine());
 
 double[,] array2d = CreateMatrixDouble(m, n, 1, 10);
