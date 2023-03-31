@@ -41,7 +41,7 @@ void PrintMatrix (int[,] matrix)
 
 bool MatrixElementPosition(int [,] matrix, int row, int column)
 {
-    if(matrix.GetLength(0) >= row && matrix.GetLength(1) >= column && row >= 0 && column >= 0)
+    if(matrix.GetLength(0) - 1 >= row && matrix.GetLength(1) - 1 >= column && row >= 0 && column >= 0)
     {
         int result = matrix[row, column];
         return true;
