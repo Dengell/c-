@@ -36,34 +36,23 @@ void PrintMatrix (int[,] matrix)
 
 int[,] MultiplyMatrix(int[,] matrix1, int[,] matrix2)
 {
+    int[,] multiplyMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
 
-    int row = (matrix1.GetLength(0) >= matrix2.GetLength(0)) ? matrix1.GetLength(0) : matrix2.GetLength(0);
-    int col = (matrix1.GetLength(1) >= matrix2.GetLength(1)) ? matrix1.GetLength(1) : matrix2.GetLength(1);
-
-    int[,] multiplyMatrix = new int[row, col];
-
-    if (matrix1.GetLength(1) == matrix2.GetLength(0))
+    for (int i = 0; i < matrix1.GetLength(0); i++)
     {
-        for (int i = 0; i < row; i++)
+        for (int j = 0; j < matrix2.GetLength(1); j++)
         {
-            for (int j = 0; j < col; j++)
+            for (int k = 0; k < matrix2.GetLength(1) ; k++)
             {
-                for (int k = 0; k < matrix2.GetLength(0); k++)
-                {
-                    multiplyMatrix[i, j] += matrix1[i, k] * matrix2[k, j];
-                }
+                multiplyMatrix[i, j] += matrix1[i, k] * matrix2[k, j];
             }
         }
-    }
-    else
-    {
-        Console.WriteLine("Не возможно умножить матрицу А на В");
     }
     return multiplyMatrix;
 }
 
-int[,] array2d1 = CreateMatrixRndInt(2, 2, 1, 10);
-int[,] array2d2 = CreateMatrixRndInt(2, 2, 1, 10);
+int[,] array2d1 = CreateMatrixRndInt(2, 4, 1, 10);
+int[,] array2d2 = CreateMatrixRndInt(3, 2, 1, 10);
 int[,] myltiplyMatrix = MultiplyMatrix(array2d1, array2d2);
 
 Console.WriteLine("Первая Матрица:");
@@ -74,5 +63,9 @@ Console.WriteLine("Вторая Матрица:");
 PrintMatrix(array2d2);
 Console.WriteLine();
 
-Console.WriteLine("Результирующая матрица будет:");
-PrintMatrix(myltiplyMatrix);
+if (array2d1.GetLength(1) == array2d2.GetLength(0))
+{
+    Console.WriteLine("Результирующая матрица будет:");
+    PrintMatrix(myltiplyMatrix);
+}
+else Console.WriteLine("Не возможно перемножить матрици");
